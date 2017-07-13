@@ -1,5 +1,5 @@
 
-Logger = {};
+const Logger = {};
 
 Logger.log = function (param, tag) {
   Meteor.call('logglyLog', param, tag, function() {});
@@ -25,3 +25,5 @@ Logger.error = function (param) {
   Meteor.call('logglyError', param, function() {});
   if (Meteor.isDevelopment) console.error(param);
 };
+
+export default Logger;

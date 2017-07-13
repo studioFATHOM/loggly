@@ -1,5 +1,10 @@
 # Loggly for Meteor
 
+This fork is uses winston, rather than loggly, as the backend to the ismorphoric Logger client.
+
+----
+
+
 A Meteor logger for Loggly on the server/client side.
 
 Client side support implemented by [Michael Ghobrial](https://github.com/Art1Sec8)

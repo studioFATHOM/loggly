@@ -1,18 +1,20 @@
 
+console.log('Loading winston backend for Loggly');
+
 if (!Meteor.settings.loggly) {
   console.error("Loggly not found in settings.json");
   return;
 }
 
 import './imports/logglyMeteorMethods.js';
-var loggly = Npm.require('loggly');
+import winston from 'winston';
 
 /**
  * Basic setup of Loggly class
  */
 
-Loggly = function(options) {
-  this.client = loggly.createClient(options);
+const Loggly = function(options) {
+  this.client = winston;
 };
 
 /**
@@ -56,4 +58,4 @@ Loggly.prototype.error = function () {
  * Logger export
  */
 
-Logger = new Loggly(Meteor.settings.loggly);
+export default const Logger = new Loggly(Meteor.settings.loggly);

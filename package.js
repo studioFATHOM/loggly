@@ -7,7 +7,7 @@ Package.describe({
 });
 
 Npm.depends({
-  'loggly': '1.0.8'
+  'winston': '^2.3.1'
 });
 
 Package.onUse(function (api) {
